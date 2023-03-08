@@ -35,7 +35,8 @@ case "$FIRMWARE" in
 		/usr/bin/fritz_cal_extract -i 1 -s 0x3C000 -e 0x212 -l 12064 -o /lib/firmware/$FIRMWARE $(find_mtd_chardev "urlader1")
 		;;
 	openmesh,a62 |\
-	plasmacloud,pa2200)
+	plasmacloud,pa2200 |\
+	yuncore,xd6800)
 		caldata_extract "0:ART" 0x9000 0x2f20
 		;;
 	linksys,ea8300 |\
@@ -80,7 +81,8 @@ case "$FIRMWARE" in
 	openmesh,a42 |\
 	openmesh,a62 |\
 	plasmacloud,pa1200 |\
-	plasmacloud,pa2200)
+	plasmacloud,pa2200 |\
+	yuncore,xd6800)
 		caldata_extract "0:ART" 0x1000 0x2f20
 		;;
 	devolo,magic-2-wifi-next)
@@ -164,7 +166,8 @@ case "$FIRMWARE" in
 	openmesh,a42 |\
 	openmesh,a62 |\
 	plasmacloud,pa1200 |\
-	plasmacloud,pa2200)
+	plasmacloud,pa2200 |\
+	yuncore,xd6800)
 		caldata_extract "0:ART" 0x5000 0x2f20
 		;;
 	devolo,magic-2-wifi-next)

@@ -831,6 +831,20 @@ define Device/openmesh_a62
 endef
 TARGET_DEVICES += openmesh_a62
 
+define Device/yuncore_xd6800
+	$(call Device/FitImage)
+	DEVICE_VENDOR := Yuncore
+	DEVICE_MODEL := XD6800
+	BOARD_NAME := xd6800
+	SOC := qcom-ipq4019
+	KERNEL_SIZE := 4096k
+	IMAGE_SIZE := 26624k
+	IMAGES += factory.bin
+	IMAGE/sysupgrade.bin := append-kernel | pad-to $$$${KERNEL_SIZE} | append-rootfs | pad-rootfs | append-metadata
+	DEVICE_PACKAGES := ath10k-firmware-qca9888
+endef
+TARGET_DEVICES += yuncore_xd6800
+
 define Device/p2w_r619ac
 	$(call Device/FitzImage)
 	$(call Device/UbiFit)
